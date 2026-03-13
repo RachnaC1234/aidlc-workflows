@@ -27,6 +27,7 @@ B) Review a previous stage ([Show available stages])
 3. **MANDATORY: Load Previous Stage Artifacts** - Before resuming any stage, automatically read all relevant artifacts from previous stages:
    - **Reverse Engineering**: Read architecture.md, code-structure.md, api-documentation.md
    - **Requirements Analysis**: Read requirements.md, requirement-verification-questions.md
+   - **Refactoring Strategy**: Read strategy-weights.md, strategy-questions.md, strategy-decision.md
    - **User Stories**: Read stories.md, personas.md, story-generation-plan.md
    - **Application Design**: Read application-design artifacts (components.md, component-methods.md, services.md)
    - **Design (Units)**: Read unit-of-work.md, unit-of-work-dependency.md, unit-of-work-story-map.md

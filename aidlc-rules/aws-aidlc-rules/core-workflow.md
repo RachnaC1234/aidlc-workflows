@@ -87,6 +87,7 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
 - Workspace Detection (ALWAYS)
 - Reverse Engineering (CONDITIONAL - Brownfield only)
 - Requirements Analysis (ALWAYS - Adaptive depth)
+- Refactoring Strategy (CONDITIONAL - Brownfield refactoring only)
 - User Stories (CONDITIONAL)
 - Workflow Planning (ALWAYS)
 - Application Design (CONDITIONAL)
@@ -155,6 +156,28 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
 4. Execute at appropriate depth (minimal/standard/comprehensive)
 5. **Wait for Explicit Approval**: Follow approval format from requirements-analysis.md detailed steps - DO NOT PROCEED until user confirms
 6. **MANDATORY**: Log user's response in audit.md with complete raw input
+
+## Refactoring Strategy (CONDITIONAL - Brownfield Refactoring Only)
+
+**Execute IF**:
+- Brownfield project detected
+- User request type is Refactoring, Modernization, or Migration (as determined by Requirements Analysis)
+
+**Skip IF**:
+- Greenfield project
+- Non-refactoring brownfield work (feature addition, bug fix, enhancement)
+
+**Execution**:
+1. **MANDATORY**: Log any user input during this phase in audit.md
+2. Load all steps from `inception/refactoring-strategy.md`
+3. Collect codebase metrics from reverse engineering artifacts (LOC, test coverage)
+4. Auto-derive Q1 (Codebase Size) and Q2 (Test Coverage) from metrics
+5. Present default weights for user customization
+6. Present decision questions (user answers Q3-Q6 only; Q1-Q2 are auto-derived)
+7. Calculate weighted scores for Big Bang vs Strangler Fig
+8. Generate strategy decision document
+9. **Wait for Explicit Approval**: Present detailed completion message (see refactoring-strategy.md for message format) - DO NOT PROCEED until user confirms
+10. **MANDATORY**: Log user's response in audit.md with complete raw input
 
 ## User Stories (CONDITIONAL)
 
@@ -516,6 +539,7 @@ The Operations stage will eventually include:
 │   │   ├── plans/
 │   │   ├── reverse-engineering/    # Brownfield only
 │   │   ├── requirements/
+│   │   ├── refactoring-strategy/   # Brownfield refactoring only
 │   │   ├── user-stories/
 │   │   └── application-design/
 │   ├── construction/               # 🟢 CONSTRUCTION PHASE

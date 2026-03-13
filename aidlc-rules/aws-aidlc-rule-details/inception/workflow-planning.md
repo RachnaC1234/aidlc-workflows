@@ -16,7 +16,13 @@
 - requirements.md (includes intent analysis)
 - requirement-verification-questions.md (with answers)
 
-### 1.3 Load User Stories (if executed)
+### 1.3 Load Refactoring Strategy (if executed)
+- strategy-weights.md
+- strategy-questions.md
+- strategy-decision.md
+- Use the chosen strategy (Big Bang vs Strangler Fig) to inform construction phase planning
+
+### 1.4 Load User Stories (if executed)
 - stories.md
 - personas.md
 
@@ -117,7 +123,22 @@ Evaluate risk level:
 - Technical debt reduction
 - Infrastructure changes
 
-### 3.2 Application Design - Execute IF:
+### 3.2 Refactoring Strategy Impact on Construction
+**IF Refactoring Strategy was executed**, the chosen approach shapes construction:
+
+**Big Bang selected**:
+- Prefer single unit or tightly coupled units
+- Single comprehensive construction pass
+- Single build and test cycle
+- Workflow Planning should NOT decompose into many small units
+
+**Strangler Fig selected**:
+- Decompose migration into incremental chunks as separate units
+- Units Generation SHOULD execute to define chunk boundaries
+- Each chunk gets its own construction cycle with approval gates
+- Iterative build and test per chunk
+
+### 3.3 Application Design - Execute IF:
 - New components or services needed
 - Component methods and business rules need definition
 - Service layer design required
@@ -142,7 +163,7 @@ Evaluate risk level:
 - Configuration updates
 - Straightforward implementations
 
-### 3.4 NFR Implementation - Execute IF:
+### 3.5 NFR Implementation - Execute IF:
 - Performance requirements
 - Security considerations
 - Scalability concerns
@@ -259,6 +280,7 @@ flowchart TD
         WD["Workspace Detection<br/><b>STATUS</b>"]
         RE["Reverse Engineering<br/><b>STATUS</b>"]
         RA["Requirements Analysis<br/><b>STATUS</b>"]
+        RS["Refactoring Strategy<br/><b>STATUS</b>"]
         US["User Stories<br/><b>STATUS</b>"]
         WP["Workflow Planning<br/><b>STATUS</b>"]
         AD["Application Design<br/><b>STATUS</b>"]
@@ -300,6 +322,7 @@ flowchart TD
 - [x] Workspace Detection (COMPLETED)
 - [x] Reverse Engineering (COMPLETED/SKIPPED)
 - [x] Requirements Elaboration (COMPLETED)
+- [x] Refactoring Strategy (COMPLETED/SKIPPED)
 - [x] User Stories (COMPLETED/SKIPPED)
 - [x] Execution Plan (IN PROGRESS)
 - [ ] Application Design - [EXECUTE/SKIP]
@@ -369,6 +392,7 @@ Update `aidlc-docs/aidlc-state.md`:
 - [x] Workspace Detection
 - [x] Reverse Engineering (if applicable)
 - [x] Requirements Analysis
+- [x] Refactoring Strategy (if applicable)
 - [x] User Stories (if applicable)
 - [x] Workflow Planning
 - [ ] Application Design - [EXECUTE/SKIP]

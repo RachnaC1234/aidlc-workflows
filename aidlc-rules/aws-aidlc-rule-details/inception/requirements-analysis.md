@@ -145,6 +145,7 @@ Update `aidlc-docs/aidlc-state.md`:
 - [x] Workspace Detection
 - [x] Reverse Engineering (if applicable)
 - [x] Requirements Analysis
+- [x] Refactoring Strategy (if applicable)
 ```
 
 ### Step 9: Log and Proceed
