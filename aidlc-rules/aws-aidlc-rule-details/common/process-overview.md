@@ -13,7 +13,7 @@
 • **OPERATIONS PHASE**: Placeholder for future deployment and monitoring workflows
 
 ## The Adaptive Workflow:
-• **Workspace Detection** (always) → **Reverse Engineering** (brownfield only) → **Requirements Analysis** (always, adaptive depth) → **Conditional Phases** (as needed) → **Workflow Planning** (always) → **Code Generation** (always, per-unit) → **Build and Test** (always)
+• **Workspace Detection** (always) → **Discovery** (greenfield only) → **Reverse Engineering** (brownfield only) → **Requirements Analysis** (always, adaptive depth) → **Conditional Phases** (as needed) → **Workflow Planning** (always) → **Code Generation** (always, per-unit) → **Build and Test** (always)
 
 ## How It Works:
 • **AI analyzes** your request, workspace, and complexity to determine which stages are needed
@@ -36,6 +36,7 @@ flowchart TD
     
     subgraph INCEPTION["🔵 INCEPTION PHASE"]
         WD["Workspace Detection<br/><b>ALWAYS</b>"]
+        DISC["Discovery<br/><b>CONDITIONAL</b>"]
         RE["Reverse Engineering<br/><b>CONDITIONAL</b>"]
         RA["Requirements Analysis<br/><b>ALWAYS</b>"]
         Stories["User Stories<br/><b>CONDITIONAL</b>"]
@@ -58,8 +59,10 @@ flowchart TD
     end
     
     Start --> WD
+    WD -.-> DISC
     WD -.-> RE
     WD --> RA
+    DISC --> RA
     RE --> RA
     
     RA -.-> Stories
@@ -92,6 +95,7 @@ flowchart TD
     style BT fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style OPS fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
     style RE fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style DISC fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style Stories fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style AppDesign fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
 
@@ -113,6 +117,7 @@ flowchart TD
 
 **🔵 INCEPTION PHASE** - Planning and Architecture
 - Workspace Detection: Analyze workspace state and project type (ALWAYS)
+- Discovery: Gather customer pain points and create PR/FAQ (CONDITIONAL - Greenfield only)
 - Reverse Engineering: Analyze existing codebase (CONDITIONAL - Brownfield only)
 - Requirements Analysis: Gather and validate requirements (ALWAYS - Adaptive depth)
 - User Stories: Create user stories and personas (CONDITIONAL)

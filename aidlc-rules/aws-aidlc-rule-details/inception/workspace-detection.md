@@ -30,7 +30,7 @@ Check if `aidlc-docs/aidlc-state.md` exists:
 
 **IF workspace is empty (no existing code)**:
 - Set flag: `brownfield = false`
-- Next phase: Requirements Analysis
+- Next phase: Discovery (to gather pain points and create PRFAQ)
 
 **IF workspace has existing code**:
 - Set flag: `brownfield = true`
@@ -82,7 +82,7 @@ Workspace analysis findings:
 
 Workspace analysis findings:
 • **Project Type**: Greenfield project
-• **Next Step**: Proceeding to **Requirements Analysis**...
+• **Next Step**: Proceeding to **Discovery** to gather customer pain points and create PR/FAQ...
 ```
 
 ## Step 6: Automatically Proceed
@@ -90,4 +90,4 @@ Workspace analysis findings:
 - **No user approval required** - this is informational only
 - Automatically proceed to next phase:
   - **Brownfield**: Reverse Engineering (if no existing artifacts) or Requirements Analysis (if artifacts exist)
-  - **Greenfield**: Requirements Analysis
+  - **Greenfield**: Discovery

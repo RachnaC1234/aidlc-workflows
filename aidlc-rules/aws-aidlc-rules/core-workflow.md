@@ -85,6 +85,7 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
 
 **Stages in INCEPTION PHASE**:
 - Workspace Detection (ALWAYS)
+- Discovery (CONDITIONAL - Greenfield only)
 - Reverse Engineering (CONDITIONAL - Brownfield only)
 - Requirements Analysis (ALWAYS - Adaptive depth)
 - User Stories (CONDITIONAL)
@@ -107,6 +108,33 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
 5. **MANDATORY**: Log findings in audit.md
 6. Present completion message to user (see workspace-detection.md for message formats)
 7. Automatically proceed to next phase
+
+## Discovery (CONDITIONAL - Greenfield Only)
+
+**Execute IF**:
+- Greenfield project detected
+- No existing Discovery/PRFAQ artifacts found in `aidlc-docs/inception/discovery/`
+
+**Skip IF**:
+- Brownfield project (existing codebase)
+- Previous Discovery/PRFAQ artifacts already exist
+
+**Purpose**: Gather customer pain points and create a PR/FAQ document that provides context for Requirements Analysis. Replaces Requirements Analysis as the first analytical step for Greenfield projects.
+
+**Execution**:
+1. **MANDATORY**: Log start of Discovery in audit.md
+2. Load all steps from `inception/discovery.md`
+3. Execute Discovery:
+   - Determine pain point gathering mode (interactive or URL-based)
+   - If URL mode: read ONLY the user-provided URL, no other URLs
+   - Gather and confirm customer pain points
+   - Generate PR/FAQ document using the Working Backwards format
+   - Ask clarifying questions using standard AIDLC question format if needed
+4. **Wait for Explicit Approval**: Present PRFAQ for review — DO NOT PROCEED until user confirms
+5. **MANDATORY**: Log user's response in audit.md with complete raw input
+6. Proceed to Requirements Analysis with PRFAQ as input context
+
+---
 
 ## Reverse Engineering (CONDITIONAL - Brownfield Only)
 
@@ -146,11 +174,12 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
 1. **MANDATORY**: Log any user input during this phase in audit.md
 2. Load all steps from `inception/requirements-analysis.md`
 3. Execute requirements analysis:
+   - Load Discovery/PRFAQ artifacts (if Greenfield and Discovery was executed)
    - Load reverse engineering artifacts (if brownfield)
    - Analyze user request (intent analysis)
    - Determine requirements depth needed
    - Assess current requirements
-   - Ask clarifying questions (if needed)
+   - Ask clarifying questions (if needed — if PRFAQ covers all areas, fewer questions may be needed; if gaps remain, use regular questionnaire)
    - Generate requirements document
 4. Execute at appropriate depth (minimal/standard/comprehensive)
 5. **Wait for Explicit Approval**: Follow approval format from requirements-analysis.md detailed steps - DO NOT PROCEED until user confirms
@@ -514,6 +543,7 @@ The Operations stage will eventually include:
 ├── aidlc-docs/                     # 📄 DOCUMENTATION ONLY
 │   ├── inception/                  # 🔵 INCEPTION PHASE
 │   │   ├── plans/
+│   │   ├── discovery/              # Greenfield only
 │   │   ├── reverse-engineering/    # Brownfield only
 │   │   ├── requirements/
 │   │   ├── user-stories/

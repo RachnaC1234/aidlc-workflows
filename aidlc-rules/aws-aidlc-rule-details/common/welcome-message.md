@@ -29,6 +29,7 @@ AI-DLC is a structured yet flexible software development process that adapts to 
         ║     Planning & Application Design     ║
         ╠═══════════════════════════════════════╣
         ║ • Workspace Detection (ALWAYS)        ║
+        ║ • Discovery (COND - Greenfield)       ║
         ║ • Reverse Engineering (COND)          ║
         ║ • Requirements Analysis (ALWAYS)      ║
         ║ • User Stories (CONDITIONAL)          ║
@@ -67,8 +68,8 @@ AI-DLC is a structured yet flexible software development process that adapts to 
 
 **INCEPTION PHASE** - *Planning & Application Design*
 - **Purpose**: Determines WHAT to build and WHY
-- **Activities**: Understanding requirements, analyzing existing code (if any), planning the approach
-- **Output**: Clear requirements, execution plan, decisions on the number of units of work for parallel development
+- **Activities**: Discovering customer pain points (Greenfield), understanding requirements, analyzing existing code (if any), planning the approach
+- **Output**: PR/FAQ (Greenfield), clear requirements, execution plan, decisions on the number of units of work for parallel development
 - **Your Role**: Answer questions, review plans, approve direction
 
 **CONSTRUCTION PHASE** - *Detailed Design, Implementation & Test*

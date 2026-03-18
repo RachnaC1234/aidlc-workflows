@@ -20,6 +20,16 @@
 - Load `aidlc-docs/inception/reverse-engineering/technology-stack.md`
 - Use these to understand existing system when analyzing request
 
+### Step 1.5: Load Discovery/PRFAQ Context (if available)
+
+**IF greenfield project AND Discovery phase was executed**:
+- Load `aidlc-docs/inception/discovery/prfaq.md`
+- Use the PRFAQ as primary context for understanding the product vision, customer pain points, and proposed solution
+- The PRFAQ provides: target customer, problem definition, solution description, competitive landscape, FAQs
+- Requirements Analysis should build upon and refine the PRFAQ context rather than starting from scratch
+- If the PRFAQ covers all required areas sufficiently, fewer clarifying questions may be needed
+- If gaps remain (e.g., specific NFRs, technical constraints, edge cases not covered in PRFAQ), use the regular questionnaire to fill them
+
 ### Step 2: Analyze User Request (Intent Analysis)
 
 #### 2.1 Request Clarity

@@ -12,6 +12,9 @@
 - technology-stack.md
 - dependencies.md
 
+### 1.1.5 Load Discovery Artifacts (if greenfield and Discovery was executed)
+- prfaq.md
+
 ### 1.2 Load Requirements Analysis
 - requirements.md (includes intent analysis)
 - requirement-verification-questions.md (with answers)
