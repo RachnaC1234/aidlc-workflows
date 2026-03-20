@@ -12,8 +12,8 @@
 - technology-stack.md
 - dependencies.md
 
-### 1.1.5 Load Discovery Artifacts (if greenfield and Discovery was executed)
-- prfaq.md
+### 1.1.5 Load Discovery Document (if greenfield and Discovery Phase was executed)
+- `aidlc-docs/discovery/discovery-document.md` (contains Envision + Product Strategy + Go-to-Market)
 
 ### 1.2 Load Requirements Analysis
 - requirements.md (includes intent analysis)

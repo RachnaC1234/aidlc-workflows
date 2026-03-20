@@ -7,17 +7,19 @@
 - **core-workflow.md**: User-facing welcome message with ASCII diagram
 - **README.md**: Human-readable documentation for repository
 
-## The Three-Phase Lifecycle:
+## The Four-Phase Lifecycle:
+• **DISCOVERY PHASE**: PM-led product definition (Envision + Product Strategy + Go-to-Market) — Greenfield only
 • **INCEPTION PHASE**: Planning and architecture (Workspace Detection + conditional phases + Workflow Planning)
 • **CONSTRUCTION PHASE**: Design, implementation, build and test (per-unit design + Code Planning/Generation + Build & Test)
 • **OPERATIONS PHASE**: Placeholder for future deployment and monitoring workflows
 
 ## The Adaptive Workflow:
-• **Workspace Detection** (always) → **Discovery** (greenfield only) → **Reverse Engineering** (brownfield only) → **Requirements Analysis** (always, adaptive depth) → **Conditional Phases** (as needed) → **Workflow Planning** (always) → **Code Generation** (always, per-unit) → **Build and Test** (always)
+• **Workspace Detection** (always) → **DISCOVERY PHASE** (greenfield only: Envision → Product Strategy → Go-to-Market) → **Reverse Engineering** (brownfield only) → **Requirements Analysis** (always, adaptive depth) → **Conditional Phases** (as needed) → **Workflow Planning** (always) → **Code Generation** (always, per-unit) → **Build and Test** (always)
 
 ## How It Works:
 • **AI analyzes** your request, workspace, and complexity to determine which stages are needed
 • **These stages always execute**: Workspace Detection, Requirements Analysis (adaptive depth), Workflow Planning, Code Generation (per-unit), Build and Test
+• **Discovery Phase executes for Greenfield projects**: Envision, Product Strategy, Go-to-Market — producing a living document that Inception consumes
 • **All other stages are conditional**: Reverse Engineering, User Stories, Application Design, Units Generation, per-unit design stages (Functional Design, NFR Requirements, NFR Design, Infrastructure Design)
 • **No fixed sequences**: Stages execute in the order that makes sense for your specific task
 
@@ -28,15 +30,20 @@
 • **Collectively decide** on architectural approach when needed
 • **Important**: This is a team effort - involve relevant stakeholders for each phase
 
-## AI-DLC Three-Phase Workflow:
+## AI-DLC Four-Phase Workflow:
 
 ```mermaid
 flowchart TD
     Start(["User Request"])
     
+    subgraph DISCOVERY["🟣 DISCOVERY PHASE (PM-Led, Greenfield Only)"]
+        ENV["Envision<br/><b>CONDITIONAL</b>"]
+        PS["Product Strategy<br/><b>CONDITIONAL</b>"]
+        GTM["Go-to-Market<br/><b>CONDITIONAL</b>"]
+    end
+    
     subgraph INCEPTION["🔵 INCEPTION PHASE"]
         WD["Workspace Detection<br/><b>ALWAYS</b>"]
-        DISC["Discovery<br/><b>CONDITIONAL</b>"]
         RE["Reverse Engineering<br/><b>CONDITIONAL</b>"]
         RA["Requirements Analysis<br/><b>ALWAYS</b>"]
         Stories["User Stories<br/><b>CONDITIONAL</b>"]
@@ -59,10 +66,12 @@ flowchart TD
     end
     
     Start --> WD
-    WD -.-> DISC
+    WD -.-> ENV
+    ENV --> PS
+    PS --> GTM
+    GTM --> RA
     WD -.-> RE
     WD --> RA
-    DISC --> RA
     RE --> RA
     
     RA -.-> Stories
@@ -90,20 +99,21 @@ flowchart TD
     style WD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style RA fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style WP fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
-
     style CG fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style BT fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style OPS fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
+    style ENV fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style PS fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style GTM fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style RE fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style DISC fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style Stories fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style AppDesign fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-
     style UnitsG fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style FD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style NFRA fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style NFRD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style ID fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style DISCOVERY fill:#E1BEE7,stroke:#6A1B9A,stroke-width:3px, color:#000
     style INCEPTION fill:#BBDEFB,stroke:#1565C0,stroke-width:3px, color:#000
     style CONSTRUCTION fill:#C8E6C9,stroke:#2E7D32,stroke-width:3px, color:#000
     style OPERATIONS fill:#FFF59D,stroke:#F57F17,stroke-width:3px, color:#000
@@ -115,9 +125,13 @@ flowchart TD
 
 **Stage Descriptions:**
 
+**🟣 DISCOVERY PHASE** - PM-Led Product Definition (Greenfield Only)
+- Envision: Gather customer pain points, synthesize into categorized analysis, generate PRFAQ using Working Backwards method with intelligent defaults (CONDITIONAL - Greenfield only)
+- Product Strategy: Capture positioning, differentiation, business model decisions informed by validated pain points and PRFAQ (CONDITIONAL - Greenfield only)
+- Go-to-Market: Marketing strategy, sales approach, launch planning before Construction begins (CONDITIONAL - Greenfield only)
+
 **🔵 INCEPTION PHASE** - Planning and Architecture
 - Workspace Detection: Analyze workspace state and project type (ALWAYS)
-- Discovery: Gather customer pain points and create PR/FAQ (CONDITIONAL - Greenfield only)
 - Reverse Engineering: Analyze existing codebase (CONDITIONAL - Brownfield only)
 - Requirements Analysis: Gather and validate requirements (ALWAYS - Adaptive depth)
 - User Stories: Create user stories and personas (CONDITIONAL)
@@ -139,6 +153,7 @@ flowchart TD
 **Key Principles:**
 - Phases execute only when they add value
 - Each phase independently evaluated
+- DISCOVERY focuses on "who" and "what problem" (PM-led, Greenfield only)
 - INCEPTION focuses on "what" and "why"
 - CONSTRUCTION focuses on "how" plus "build and test"
 - OPERATIONS is placeholder for future expansion

@@ -8,6 +8,7 @@
 
 ## Prerequisites
 - Workspace Detection must be complete
+- Discovery Phase must be complete (if greenfield)
 - Reverse Engineering must be complete (if brownfield)
 
 ## Execution Steps
@@ -20,15 +21,18 @@
 - Load `aidlc-docs/inception/reverse-engineering/technology-stack.md`
 - Use these to understand existing system when analyzing request
 
-### Step 1.5: Load Discovery/PRFAQ Context (if available)
+### Step 1.5: Load Discovery Document (if available)
 
-**IF greenfield project AND Discovery phase was executed**:
-- Load `aidlc-docs/inception/discovery/prfaq.md`
-- Use the PRFAQ as primary context for understanding the product vision, customer pain points, and proposed solution
-- The PRFAQ provides: target customer, problem definition, solution description, competitive landscape, FAQs
-- Requirements Analysis should build upon and refine the PRFAQ context rather than starting from scratch
-- If the PRFAQ covers all required areas sufficiently, fewer clarifying questions may be needed
-- If gaps remain (e.g., specific NFRs, technical constraints, edge cases not covered in PRFAQ), use the regular questionnaire to fill them
+**IF greenfield project AND Discovery Phase was executed**:
+- Load `aidlc-docs/discovery/discovery-document.md`
+- This living document contains three parts:
+  - **Part 1: Envision** — Pain point analysis summary and complete PRFAQ (target customer, problem definition, solution, competitive landscape, internal/external FAQs)
+  - **Part 2: Product Strategy** — Positioning, differentiation, business model, target market, success metrics
+  - **Part 3: Go-to-Market** — Marketing strategy, sales approach, launch plan, success criteria
+- Use the Discovery Document as primary context for understanding the product vision, customer pain points, and proposed solution
+- Requirements Analysis should build upon and refine the Discovery Document context rather than starting from scratch
+- If the Discovery Document covers all required areas sufficiently, fewer clarifying questions may be needed
+- If gaps remain (e.g., specific NFRs, technical constraints, edge cases not covered), use the regular questionnaire to fill them
 
 ### Step 2: Analyze User Request (Intent Analysis)
 

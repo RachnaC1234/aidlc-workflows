@@ -18,10 +18,20 @@ AI-DLC is a structured yet flexible software development process that adapts to 
 - **Documents everything** so you have a complete record of decisions and rationale
 - **Guides you through each phase** with clear checkpoints and approval gates
 
-## The Three-Phase Lifecycle
+## The Four-Phase Lifecycle
 
 ```
                          User Request
+                              |
+                              v
+        ╔═══════════════════════════════════════╗
+        ║     DISCOVERY PHASE (PM-Led)          ║
+        ║     COND - Greenfield Only            ║
+        ╠═══════════════════════════════════════╣
+        ║ • Envision (pain points + PRFAQ)      ║
+        ║ • Product Strategy                    ║
+        ║ • Go-to-Market                        ║
+        ╚═══════════════════════════════════════╝
                               |
                               v
         ╔═══════════════════════════════════════╗
@@ -29,7 +39,6 @@ AI-DLC is a structured yet flexible software development process that adapts to 
         ║     Planning & Application Design     ║
         ╠═══════════════════════════════════════╣
         ║ • Workspace Detection (ALWAYS)        ║
-        ║ • Discovery (COND - Greenfield)       ║
         ║ • Reverse Engineering (COND)          ║
         ║ • Requirements Analysis (ALWAYS)      ║
         ║ • User Stories (CONDITIONAL)          ║
@@ -66,10 +75,16 @@ AI-DLC is a structured yet flexible software development process that adapts to 
 
 ### Phase Breakdown:
 
+**DISCOVERY PHASE** - *PM-Led Product Definition (Greenfield Only)*
+- **Purpose**: Defines WHO the customer is, WHAT problem to solve, and WHY it matters — before any technical work begins
+- **Activities**: Gathering customer pain points (interactive, URL analysis, or hybrid), creating PRFAQ using Working Backwards, defining product strategy, planning go-to-market
+- **Output**: A single living Discovery Document containing validated PRFAQ, product strategy, and go-to-market plan
+- **Your Role**: Lead the product vision, answer questions (with intelligent defaults to confirm or override), review and approve each stage
+
 **INCEPTION PHASE** - *Planning & Application Design*
 - **Purpose**: Determines WHAT to build and WHY
-- **Activities**: Discovering customer pain points (Greenfield), understanding requirements, analyzing existing code (if any), planning the approach
-- **Output**: PR/FAQ (Greenfield), clear requirements, execution plan, decisions on the number of units of work for parallel development
+- **Activities**: Understanding requirements (informed by Discovery Document for Greenfield), analyzing existing code (if any), planning the approach
+- **Output**: Clear requirements, execution plan, decisions on the number of units of work for parallel development
 - **Your Role**: Answer questions, review plans, approve direction
 
 **CONSTRUCTION PHASE** - *Detailed Design, Implementation & Test*
@@ -95,11 +110,12 @@ AI-DLC is a structured yet flexible software development process that adapts to 
 ## What Happens Next:
 
 1. **I'll analyze your workspace** to understand if this is a new or existing project
-2. **I'll gather requirements** and ask clarifying questions if needed
-3. **I'll create an execution plan** showing which stages I propose to run and why
-4. **You'll review and approve** the plan (or request changes)
-5. **We'll execute the plan** with checkpoints at each major stage
-6. **You'll get working code** with complete documentation and tests
+2. **For new projects (Greenfield)**: I'll guide you through Discovery — gathering pain points, creating a PRFAQ, defining product strategy, and planning go-to-market
+3. **I'll gather requirements** and ask clarifying questions if needed (informed by Discovery for Greenfield)
+4. **I'll create an execution plan** showing which stages I propose to run and why
+5. **You'll review and approve** the plan (or request changes)
+6. **We'll execute the plan** with checkpoints at each major stage
+7. **You'll get working code** with complete documentation and tests
 
 The AI-DLC process adapts to:
 - 📋 Your intent clarity and complexity

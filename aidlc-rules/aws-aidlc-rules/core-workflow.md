@@ -174,12 +174,12 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
 1. **MANDATORY**: Log any user input during this phase in audit.md
 2. Load all steps from `inception/requirements-analysis.md`
 3. Execute requirements analysis:
-   - Load Discovery/PRFAQ artifacts (if Greenfield and Discovery was executed)
+   - Load Discovery Document (if Greenfield and Discovery Phase was executed): `aidlc-docs/discovery/discovery-document.md` — contains Envision (pain points + PRFAQ), Product Strategy, and Go-to-Market
    - Load reverse engineering artifacts (if brownfield)
    - Analyze user request (intent analysis)
    - Determine requirements depth needed
    - Assess current requirements
-   - Ask clarifying questions (if needed — if PRFAQ covers all areas, fewer questions may be needed; if gaps remain, use regular questionnaire)
+   - Ask clarifying questions (if needed — if Discovery Document covers all areas, fewer questions may be needed; if gaps remain, use regular questionnaire)
    - Generate requirements document
 4. Execute at appropriate depth (minimal/standard/comprehensive)
 5. **Wait for Explicit Approval**: Follow approval format from requirements-analysis.md detailed steps - DO NOT PROCEED until user confirms
@@ -541,9 +541,13 @@ The Operations stage will eventually include:
 ├── [project-specific structure]    # Varies by project (see code-generation.md)
 │
 ├── aidlc-docs/                     # 📄 DOCUMENTATION ONLY
+│   ├── discovery/                  # � DISCOVERY PHASE (Greenfield only)
+│   │   ├── discovery-document.md   # Single living document (all 3 stages)
+│   │   ├── envision/
+│   │   ├── product-strategy/
+│   │   └── go-to-market/
 │   ├── inception/                  # 🔵 INCEPTION PHASE
 │   │   ├── plans/
-│   │   ├── discovery/              # Greenfield only
 │   │   ├── reverse-engineering/    # Brownfield only
 │   │   ├── requirements/
 │   │   ├── user-stories/
