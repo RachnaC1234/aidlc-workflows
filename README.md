@@ -10,7 +10,7 @@ AI-DLC is an intelligent software development workflow that adapts to your needs
 - [Quick Start](#quick-start)
 - [Platform-Specific Setup](#platform-specific-setup)
 - [Usage](#usage)
-- [Three-Phase Adaptive Workflow](#three-phase-adaptive-workflow)
+- [Four-Phase Adaptive Workflow](#four-phase-adaptive-workflow)
 - [Key Features](#key-features)
 - [Extensions](#extensions)
 - [Tenets](#tenets)
@@ -227,6 +227,7 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 │       └── ai-dlc-workflow.mdc
 └── .aidlc-rule-details/
     ├── common/
+    ├── discovery/
     ├── inception/
     ├── construction/
     └── operations/
@@ -303,6 +304,7 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 │   └── core-workflow.md
 └── .aidlc-rule-details/
     ├── common/
+    ├── discovery/
     ├── inception/
     ├── construction/
     └── operations/
@@ -376,6 +378,7 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 ├── CLAUDE.md
 └── .aidlc-rule-details/
     ├── common/
+    ├── discovery/
     ├── inception/
     ├── construction/
     └── operations/
@@ -426,6 +429,7 @@ xcopy "%USERPROFILE%\Downloads\aidlc-rules\aws-aidlc-rule-details" ".aidlc-rule-
 │   └── copilot-instructions.md
 └── .aidlc-rule-details/
     ├── common/
+    ├── discovery/
     ├── inception/
     ├── construction/
     └── operations/
@@ -456,13 +460,20 @@ If your agent has no convention for rules files, place both folders at your proj
 
 ---
 
-## Three-Phase Adaptive Workflow
+## Four-Phase Adaptive Workflow
 
-AI-DLC follows a structured three-phase approach that adapts to your project's complexity:
+AI-DLC follows a structured four-phase approach that adapts to your project's complexity:
+
+### � DISCOVERY PHASE (PM-Led, Greenfield Only)
+Defines **WHO** the customer is, **WHAT** problem to solve, and **WHY** it matters
+- Envision: Gather customer pain points and create PRFAQ using Working Backwards method
+- Product Strategy: Positioning, differentiation, and business model decisions
+- Go-to-Market: Marketing, sales, and launch planning
+- All three stages produce a single living document that Inception consumes
 
 ### 🔵 INCEPTION PHASE
 Determines **WHAT** to build and **WHY**
-- Requirements analysis and validation
+- Requirements analysis and validation (informed by Discovery Document for Greenfield)
 - User story creation (when applicable)
 - Application Design and creating units of work for parallel development
 - Risk assessment and complexity evaluation
@@ -530,6 +541,10 @@ The workflow currently ships with a baseline security extension.
 
 ```
 aws-aidlc-rule-details/
+├── discovery/                         # Discovery phase rules (Greenfield)
+│   ├── envision.md
+│   ├── product-strategy.md
+│   └── go-to-market.md
 └── extensions/
     └── security/                      # Extension category
         └── baseline/
