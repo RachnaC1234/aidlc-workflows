@@ -2,7 +2,7 @@
 
 **Assume the role** of a product strategist and customer researcher
 
-**Phase**: DISCOVERY PHASE — Stage 1 of 3
+**Phase**: DISCOVERY PHASE — Stage 1 of 4
 **Conditional Phase**: Executes only for Greenfield projects, before Inception.
 
 **Purpose**: Start with a customer problem and structure it into a validated product definition. Gather pain points, synthesize them into a categorized analysis, and generate a PRFAQ using the Working Backwards method.
@@ -312,13 +312,13 @@ A: [Answer]
 - [Additional artifacts based on mode used]
 
 ## Next Step
-Proceeding to **Product Strategy** to capture positioning, differentiation, and business model decisions.
+Proceeding to **Prototype & Validation** to build and validate a working prototype, or skip to **Product Strategy**.
 
 **Please review the Envision section of the Discovery Document and confirm to proceed.**
 ```
 
 ### ⛔ GATE: Await User Approval
-DO NOT proceed to Product Strategy until the user explicitly approves the Envision output.
+DO NOT proceed to Prototype & Validation (or Product Strategy if skipping) until the user explicitly approves the Envision output.
 
 ### Step 7: Update State Tracking
 
@@ -328,6 +328,7 @@ Update `aidlc-docs/aidlc-state.md`:
 ## Stage Progress
 ### 🟣 DISCOVERY PHASE
 - [x] Envision
+- [ ] Prototype & Validation
 - [ ] Product Strategy
 - [ ] Go-to-Market
 ```
@@ -335,4 +336,4 @@ Update `aidlc-docs/aidlc-state.md`:
 ### Step 8: Log and Proceed
 
 - Log completion in `aidlc-docs/audit.md`
-- Proceed to Product Strategy stage
+- Proceed to Prototype & Validation stage (or Product Strategy if user chooses to skip)

@@ -26,6 +26,10 @@ B) Review a previous stage ([Show available stages])
 2. **Parse current status** from the workflow file to populate the prompt
 3. **MANDATORY: Load Previous Stage Artifacts** - Before resuming any stage, automatically read all relevant artifacts from previous stages:
    - **Reverse Engineering**: Read architecture.md, code-structure.md, api-documentation.md
+   - **Discovery - Envision**: Read discovery-document.md (Part 1), pain-point-analysis.md, pain-points-from-url.md
+   - **Discovery - Prototype & Validation**: Read prototype-spec.md, design-context.md, build-instructions.md, iteration-log.md, validation-plan.md, validation-results.md
+   - **Discovery - Product Strategy**: Read discovery-document.md (Part 2), strategy-questions.md
+   - **Discovery - Go-to-Market**: Read discovery-document.md (Part 3), gtm-questions.md
    - **Requirements Analysis**: Read requirements.md, requirement-verification-questions.md
    - **User Stories**: Read stories.md, personas.md, story-generation-plan.md
    - **Application Design**: Read application-design artifacts (components.md, component-methods.md, services.md)

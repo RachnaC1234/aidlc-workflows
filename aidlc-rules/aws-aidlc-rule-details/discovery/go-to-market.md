@@ -2,7 +2,7 @@
 
 **Assume the role** of a go-to-market strategist
 
-**Phase**: DISCOVERY PHASE — Stage 3 of 3
+**Phase**: DISCOVERY PHASE — Stage 4 of 4
 **Conditional Phase**: Executes only for Greenfield projects, after Product Strategy.
 
 **Purpose**: Cover marketing, sales, and launch planning before Construction begins. This is the final stage of Discovery — completing the single living document that Inception consumes as input context.
@@ -10,17 +10,18 @@
 ## Prerequisites
 - Envision stage must be complete and approved
 - Product Strategy stage must be complete and approved
-- `aidlc-docs/discovery/discovery-document.md` must exist with Parts 1 and 2 populated
+- `aidlc-docs/discovery/discovery-document.md` must exist with prior parts populated (Envision, optionally Prototype & Validation, Product Strategy)
 
 ## Execution Steps
 
 ### Step 1: Load Prior Discovery Context
 
 Load the following artifacts:
-- `aidlc-docs/discovery/discovery-document.md` (Parts 1 & 2: Envision + Product Strategy)
+- `aidlc-docs/discovery/discovery-document.md` (All prior parts: Envision, Prototype & Validation if executed, Product Strategy)
 - `aidlc-docs/discovery/envision/pain-point-analysis.md` (categorized pain points)
+- `aidlc-docs/discovery/prototype/validation-results.md` (if Prototype & Validation was executed)
 
-Use these to inform all Go-to-Market decisions. Every recommendation should be grounded in the validated pain points, PRFAQ, and product strategy — not assumptions.
+Use these to inform all Go-to-Market decisions. Every recommendation should be grounded in the validated pain points, PRFAQ, prototype feedback (if available), and product strategy — not assumptions.
 
 ### Step 2: Gather Go-to-Market Inputs
 
@@ -122,7 +123,7 @@ Append Part 3 to `aidlc-docs/discovery/discovery-document.md`:
 
 Update the document status header:
 ```markdown
-**Status**: Complete — Envision, Product Strategy, Go-to-Market
+**Status**: Complete — Envision, [Prototype & Validation], Product Strategy, Go-to-Market
 ```
 
 ### Step 4: Present Discovery Phase Completion
@@ -130,20 +131,22 @@ Update the document status header:
 ```markdown
 # 🟣 Discovery Phase Complete
 
-All three stages of Discovery are now complete.
+All stages of Discovery are now complete.
 
 ## Discovery Document Summary
 - **Product**: [Product name]
 - **Target Customer**: [Segment]
 - **Primary Pain Point**: [Top pain point]
+- **Prototype**: [Validated with X users / Skipped]
 - **Revenue Model**: [Model]
 - **Launch Strategy**: [Strategy]
 - **Target Launch Date**: [Date]
 
 ## Artifacts
-- `aidlc-docs/discovery/discovery-document.md` — Complete living document (all 3 parts)
+- `aidlc-docs/discovery/discovery-document.md` — Complete living document (all parts)
 - `aidlc-docs/discovery/envision/pain-point-analysis.md` — Categorized pain point analysis
 - `aidlc-docs/discovery/envision/` — Envision working files
+- `aidlc-docs/discovery/prototype/` — Prototype & Validation working files (if executed)
 - `aidlc-docs/discovery/product-strategy/` — Product Strategy working files
 - `aidlc-docs/discovery/go-to-market/` — Go-to-Market working files
 
@@ -164,6 +167,7 @@ Update `aidlc-docs/aidlc-state.md`:
 ## Stage Progress
 ### 🟣 DISCOVERY PHASE
 - [x] Envision
+- [x] Prototype & Validation (or skipped)
 - [x] Product Strategy
 - [x] Go-to-Market
 

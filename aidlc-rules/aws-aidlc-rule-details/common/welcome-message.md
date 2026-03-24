@@ -29,6 +29,7 @@ AI-DLC is a structured yet flexible software development process that adapts to 
         ║     COND - Greenfield Only            ║
         ╠═══════════════════════════════════════╣
         ║ • Envision (pain points + PRFAQ)      ║
+        ║ • Prototype & Validation              ║
         ║ • Product Strategy                    ║
         ║ • Go-to-Market                        ║
         ╚═══════════════════════════════════════╝
@@ -77,8 +78,8 @@ AI-DLC is a structured yet flexible software development process that adapts to 
 
 **DISCOVERY PHASE** - *PM-Led Product Definition (Greenfield Only)*
 - **Purpose**: Defines WHO the customer is, WHAT problem to solve, and WHY it matters — before any technical work begins
-- **Activities**: Gathering customer pain points (interactive, URL analysis, or hybrid), creating PRFAQ using Working Backwards, defining product strategy, planning go-to-market
-- **Output**: A single living Discovery Document containing validated PRFAQ, product strategy, and go-to-market plan
+- **Activities**: Gathering customer pain points (interactive, URL analysis, or hybrid), creating PRFAQ using Working Backwards, building and validating a prototype with target users, defining product strategy, planning go-to-market
+- **Output**: A single living Discovery Document containing validated PRFAQ, prototype validation results, product strategy, and go-to-market plan
 - **Your Role**: Lead the product vision, answer questions (with intelligent defaults to confirm or override), review and approve each stage
 
 **INCEPTION PHASE** - *Planning & Application Design*
@@ -110,7 +111,7 @@ AI-DLC is a structured yet flexible software development process that adapts to 
 ## What Happens Next:
 
 1. **I'll analyze your workspace** to understand if this is a new or existing project
-2. **For new projects (Greenfield)**: I'll guide you through Discovery — gathering pain points, creating a PRFAQ, defining product strategy, and planning go-to-market
+2. **For new projects (Greenfield)**: I'll guide you through Discovery — gathering pain points, creating a PRFAQ, building and validating a prototype, defining product strategy, and planning go-to-market
 3. **I'll gather requirements** and ask clarifying questions if needed (informed by Discovery for Greenfield)
 4. **I'll create an execution plan** showing which stages I propose to run and why
 5. **You'll review and approve** the plan (or request changes)

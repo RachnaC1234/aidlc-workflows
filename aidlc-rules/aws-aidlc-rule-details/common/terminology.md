@@ -4,7 +4,8 @@
 
 ### Phase vs Stage
 
-**Phase**: One of the three high-level lifecycle phases in AI-DLC
+**Phase**: One of the four high-level lifecycle phases in AI-DLC
+- 🟣 **DISCOVERY PHASE** - PM-led Product Definition (WHO and WHAT problem) — Greenfield only
 - 🔵 **INCEPTION PHASE** - Planning & Architecture (WHAT and WHY)
 - 🟢 **CONSTRUCTION PHASE** - Design, Implementation & Test (HOW)
 - 🟡 **OPERATIONS PHASE** - Deployment & Monitoring (future expansion)
@@ -21,7 +22,20 @@
 - ❌ "The Requirements Assessment phase" (should be "stage")
 - ❌ "The CONSTRUCTION stage" (should be "phase")
 
-## Three-Phase Lifecycle
+## Four-Phase Lifecycle
+
+### DISCOVERY PHASE
+**Purpose**: PM-led product definition  
+**Focus**: Determine WHO the customer is, WHAT problem to solve, and WHY it matters  
+**Location**: `discovery/` directory
+
+**Stages**:
+- Envision (CONDITIONAL - Greenfield only)
+- Prototype & Validation (CONDITIONAL - Greenfield only, after Envision)
+- Product Strategy (CONDITIONAL - Greenfield only)
+- Go-to-Market (CONDITIONAL - Greenfield only)
+
+**Outputs**: Discovery Document (living document with PRFAQ, prototype validation results, product strategy, go-to-market plan)
 
 ### INCEPTION PHASE
 **Purpose**: Planning and architectural decisions  
@@ -68,6 +82,12 @@
 ---
 
 ## Workflow Stages
+
+### Discovery Stages (Greenfield Only)
+- **Envision**: Gather customer pain points, synthesize into categorized analysis, generate PRFAQ using Working Backwards method
+- **Prototype & Validation**: Build rapid prototype from Envision artifacts, capture design context, iterate with PM, validate with target users, synthesize feedback, make build decision (PROCEED/ITERATE/PIVOT/KILL)
+- **Product Strategy**: Capture positioning, differentiation, business model decisions informed by validated pain points, PRFAQ, and prototype feedback
+- **Go-to-Market**: Marketing strategy, sales approach, launch planning before Construction begins
 
 ### Always-Execute Stages
 - **Workspace Detection**: Initial analysis of workspace state and project type

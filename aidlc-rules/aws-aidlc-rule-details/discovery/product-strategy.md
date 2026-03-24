@@ -2,25 +2,31 @@
 
 **Assume the role** of a product strategy advisor
 
-**Phase**: DISCOVERY PHASE — Stage 2 of 3
-**Conditional Phase**: Executes only for Greenfield projects, after Envision.
+**Phase**: DISCOVERY PHASE — Stage 3 of 4
+**Conditional Phase**: Executes only for Greenfield projects, after Envision (and optionally after Prototype & Validation).
 
-**Purpose**: Capture positioning, differentiation, and business model decisions. These are informed by the structured discovery work — validated pain points, market research, and a PRFAQ that has been through stakeholder review — rather than assumptions.
+**Purpose**: Capture positioning, differentiation, and business model decisions. These are informed by the structured discovery work — validated pain points, market research, a PRFAQ that has been through stakeholder review, and optionally validated prototype feedback from real users — rather than assumptions.
 
 ## Prerequisites
 - Envision stage must be complete and approved
 - `aidlc-docs/discovery/discovery-document.md` must exist with Part 1 (Envision) populated
 - `aidlc-docs/discovery/envision/pain-point-analysis.md` must exist
+- If Prototype & Validation was executed: `aidlc-docs/discovery/prototype/validation-results.md` should exist
 
 ## Execution Steps
 
-### Step 1: Load Envision Context
+### Step 1: Load Prior Discovery Context
 
 Load the following artifacts:
-- `aidlc-docs/discovery/discovery-document.md` (Part 1: Envision — PRFAQ)
+- `aidlc-docs/discovery/discovery-document.md` (Parts 1 & 2 if Prototype & Validation was executed, or Part 1 only if skipped)
 - `aidlc-docs/discovery/envision/pain-point-analysis.md` (categorized pain points)
+- `aidlc-docs/discovery/prototype/validation-results.md` (if Prototype & Validation was executed)
 
-Use these to inform all Product Strategy decisions. Every question and recommendation should be grounded in the validated pain points and PRFAQ, not assumptions.
+Use these to inform all Product Strategy decisions. Every question and recommendation should be grounded in the validated pain points, PRFAQ, and prototype feedback (if available), not assumptions.
+
+**If Prototype & Validation was executed**: Strategy questions should reference specific validation findings (e.g., "Users validated that X is the top pain point" or "3 of 5 users requested Y"). This grounds strategy in evidence rather than assumptions.
+
+**If Prototype & Validation was skipped**: Strategy is based on Envision findings only. Note this limitation where relevant.
 
 ### Step 2: Gather Product Strategy Inputs
 
@@ -62,7 +68,7 @@ Use the standard AIDLC question format (multiple choice with [Answer]: tags, man
 ## Question [Number]
 [Question text]
 
-A) [Intelligent default from Envision context] ← Suggested based on your Discovery work
+A) [Intelligent default from Envision context and prototype validation] ← Suggested based on your Discovery work
 B) [Alternative option]
 C) [Alternative option]
 X) Other (please describe after [Answer]: tag below)
@@ -155,6 +161,7 @@ Update `aidlc-docs/aidlc-state.md`:
 ## Stage Progress
 ### 🟣 DISCOVERY PHASE
 - [x] Envision
+- [x] Prototype & Validation (or skipped)
 - [x] Product Strategy
 - [ ] Go-to-Market
 ```

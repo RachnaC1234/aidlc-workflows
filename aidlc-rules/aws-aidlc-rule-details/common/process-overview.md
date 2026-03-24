@@ -8,13 +8,13 @@
 - **README.md**: Human-readable documentation for repository
 
 ## The Four-Phase Lifecycle:
-• **DISCOVERY PHASE**: PM-led product definition (Envision + Product Strategy + Go-to-Market) — Greenfield only
+• **DISCOVERY PHASE**: PM-led product definition (Envision + Prototype & Validation + Product Strategy + Go-to-Market) — Greenfield only
 • **INCEPTION PHASE**: Planning and architecture (Workspace Detection + conditional phases + Workflow Planning)
 • **CONSTRUCTION PHASE**: Design, implementation, build and test (per-unit design + Code Planning/Generation + Build & Test)
 • **OPERATIONS PHASE**: Placeholder for future deployment and monitoring workflows
 
 ## The Adaptive Workflow:
-• **Workspace Detection** (always) → **DISCOVERY PHASE** (greenfield only: Envision → Product Strategy → Go-to-Market) → **Reverse Engineering** (brownfield only) → **Requirements Analysis** (always, adaptive depth) → **Conditional Phases** (as needed) → **Workflow Planning** (always) → **Code Generation** (always, per-unit) → **Build and Test** (always)
+• **Workspace Detection** (always) → **DISCOVERY PHASE** (greenfield only: Envision → Prototype & Validation → Product Strategy → Go-to-Market) → **Reverse Engineering** (brownfield only) → **Requirements Analysis** (always, adaptive depth) → **Conditional Phases** (as needed) → **Workflow Planning** (always) → **Code Generation** (always, per-unit) → **Build and Test** (always)
 
 ## How It Works:
 • **AI analyzes** your request, workspace, and complexity to determine which stages are needed
@@ -38,6 +38,7 @@ flowchart TD
     
     subgraph DISCOVERY["🟣 DISCOVERY PHASE (PM-Led, Greenfield Only)"]
         ENV["Envision<br/><b>CONDITIONAL</b>"]
+        PV["Prototype & Validation<br/><b>CONDITIONAL</b>"]
         PS["Product Strategy<br/><b>CONDITIONAL</b>"]
         GTM["Go-to-Market<br/><b>CONDITIONAL</b>"]
     end
@@ -67,7 +68,8 @@ flowchart TD
     
     Start --> WD
     WD -.-> ENV
-    ENV --> PS
+    ENV --> PV
+    PV --> PS
     PS --> GTM
     GTM --> RA
     WD -.-> RE
@@ -103,6 +105,7 @@ flowchart TD
     style BT fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style OPS fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
     style ENV fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style PV fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style PS fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style GTM fill:#CE93D8,stroke:#6A1B9A,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style RE fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
@@ -127,7 +130,8 @@ flowchart TD
 
 **🟣 DISCOVERY PHASE** - PM-Led Product Definition (Greenfield Only)
 - Envision: Gather customer pain points, synthesize into categorized analysis, generate PRFAQ using Working Backwards method with intelligent defaults (CONDITIONAL - Greenfield only)
-- Product Strategy: Capture positioning, differentiation, business model decisions informed by validated pain points and PRFAQ (CONDITIONAL - Greenfield only)
+- Prototype & Validation: Build a rapid prototype from Envision artifacts, capture design context, iterate with PM, validate with target users, synthesize feedback against pain points, make build decision (CONDITIONAL - Greenfield only, after Envision)
+- Product Strategy: Capture positioning, differentiation, business model decisions informed by validated pain points, PRFAQ, and optionally prototype feedback (CONDITIONAL - Greenfield only)
 - Go-to-Market: Marketing strategy, sales approach, launch planning before Construction begins (CONDITIONAL - Greenfield only)
 
 **🔵 INCEPTION PHASE** - Planning and Architecture

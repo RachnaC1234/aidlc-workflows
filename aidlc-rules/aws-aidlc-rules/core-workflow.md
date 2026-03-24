@@ -132,7 +132,38 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
    - Ask clarifying questions using standard AIDLC question format if needed
 4. **Wait for Explicit Approval**: Present PRFAQ for review — DO NOT PROCEED until user confirms
 5. **MANDATORY**: Log user's response in audit.md with complete raw input
-6. Proceed to Requirements Analysis with PRFAQ as input context
+6. Proceed to Prototype & Validation (if user wants to prototype) or Requirements Analysis with PRFAQ as input context
+
+## Prototype & Validation (CONDITIONAL - Greenfield Only, after Discovery)
+
+**Execute IF**:
+- Discovery/Envision complete
+- User wants to validate with a working prototype before committing to engineering
+
+**Skip IF**:
+- Idea already validated (PRFAQ approved, no prototype needed)
+- User explicitly skips
+- Brownfield project
+
+**Purpose**: Translate validated scope into a prototype specification, capture design context (brand, look and feel, device), guide the AI agent through building a rapid prototype, structure user validation, synthesize feedback against original pain points, and make a build decision (proceed, iterate, pivot, or kill).
+
+**Execution**:
+1. **MANDATORY**: Log start of Prototype & Validation in audit.md
+2. Load all steps from `discovery/prototype-validation.md`
+3. Execute Prototype & Validation:
+   - Generate prototype specification from Envision artifacts
+   - Gather design context (organization brand, reference product, or default)
+   - Instruct AI agent to build rapid prototype (relaxed quality constraints — speed over production quality)
+   - Guide PM through iteration (functional and visual changes via natural language)
+   - Set up validation plan (method, users, timeline)
+   - Import and synthesize feedback against original pain points
+   - Generate build decision recommendation
+4. **Wait for Build Decision**: Present recommendation — DO NOT PROCEED until user decides (proceed/iterate/pivot/kill)
+5. **MANDATORY**: Log user's decision in audit.md with complete raw input
+6. If proceed: continue to Product Strategy (or Requirements Analysis if skipping remaining Discovery stages)
+7. If iterate: return to iteration step
+8. If pivot: return to Envision with new context
+9. If kill: archive artifacts, end workflow
 
 ---
 
@@ -174,7 +205,7 @@ All subsequent rule detail file references (e.g., `common/process-overview.md`, 
 1. **MANDATORY**: Log any user input during this phase in audit.md
 2. Load all steps from `inception/requirements-analysis.md`
 3. Execute requirements analysis:
-   - Load Discovery Document (if Greenfield and Discovery Phase was executed): `aidlc-docs/discovery/discovery-document.md` — contains Envision (pain points + PRFAQ), Product Strategy, and Go-to-Market
+   - Load Discovery Document (if Greenfield and Discovery Phase was executed): `aidlc-docs/discovery/discovery-document.md` — contains Envision (pain points + PRFAQ), Prototype & Validation (if executed), Product Strategy, and Go-to-Market
    - Load reverse engineering artifacts (if brownfield)
    - Analyze user request (intent analysis)
    - Determine requirements depth needed
@@ -542,8 +573,9 @@ The Operations stage will eventually include:
 │
 ├── aidlc-docs/                     # 📄 DOCUMENTATION ONLY
 │   ├── discovery/                  # � DISCOVERY PHASE (Greenfield only)
-│   │   ├── discovery-document.md   # Single living document (all 3 stages)
+│   │   ├── discovery-document.md   # Single living document (all 4 stages)
 │   │   ├── envision/
+│   │   ├── prototype/              # Prototype & Validation working files
 │   │   ├── product-strategy/
 │   │   └── go-to-market/
 │   ├── inception/                  # 🔵 INCEPTION PHASE
