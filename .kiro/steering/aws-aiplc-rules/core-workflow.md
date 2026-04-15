@@ -33,12 +33,38 @@ Rule details location: `.kiro/aws-aiplc-rule-details/`
 - Test content parsing compatibility
 
 ## MANDATORY: Question File Format
-**CRITICAL**: When asking questions at any phase, you MUST follow question format guidelines.
+**CRITICAL**: ALL questions — at every phase, every intake, every stage — MUST be written in a question file (.md), NEVER asked directly in chat. No exceptions.
 
-**See `common/question-format-guide.md` for complete question formatting rules including**:
-- Multiple choice format (A, B, C, D, E options)
-- [Answer]: tag usage
-- Answer validation and ambiguity resolution
+**See `common/question-format-guide.md` for complete formatting rules.**
+
+**Core rules**:
+- Every question goes in a dedicated `.md` file in the appropriate `aiplc-docs/` subdirectory
+- Use multiple choice format (A, B, C, ... options) with "Other" always as the last option
+- Every question ends with an `[Answer]:` tag for the user to fill in
+- NEVER ask questions in the chat interface
+
+**Contextual guidance for every question**:
+- Each question MUST include a brief explanation of WHY it is being asked and HOW the answer will be used
+- When options are provided, include a short description of what each option means so the user can make an informed choice
+- If a question requires domain knowledge, provide examples or reference points to help the user answer
+- If a question has a recommended default, state it clearly (e.g., "Recommended: B")
+
+**Example of a well-formed question**:
+```markdown
+## Question 8
+How well does this initiative align with the company's strategic priorities?
+
+_This helps us score strategic alignment during prioritization. Initiatives that directly support executive mandates or stated company goals will rank higher._
+
+A) High — directly supports a stated company goal, executive mandate, or key business objective
+B) Medium — partially aligned with company direction but not a top priority
+C) Low — tangentially related or not clearly connected to current strategic priorities
+D) Other (please describe after [Answer]: tag below)
+
+[Answer]:
+```
+
+**If the user reports that questions are being asked in chat**, immediately switch to file-based questions and apologize for the deviation.
 
 ## MANDATORY: Custom Welcome Message
 **CRITICAL**: When starting ANY Discovery workflow, you MUST display the welcome message.
