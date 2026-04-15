@@ -16,7 +16,8 @@ Criteria for agentic use cases:
 1. **Business Value** (0-10)
    - Revenue impact
    - Cost savings
-   - User satisfaction improvement
+   - Risk reduction
+   - Improve ESG (Environmental, Sustainability, Governance)
 
 2. **LLM Capability Match** (0-10)
    - Can current LLMs handle this well?
@@ -33,23 +34,29 @@ Criteria for agentic use cases:
    - Change management complexity
    - User experience expectations
 
-5. **Time to Market** (0-10)
+5. **Cost & Effort** (0-10, inverse)
    - Development effort
    - Dependencies
    - Resource availability
+   - Cost to implement
 
 6. **Strategic Alignment** (0-10)
    - Company priorities
    - Market differentiation
    - Competitive advantage
 
+7. **Business Risk** (0-10)
+   - Measures new risks introduced by implementing this system (lower risk scores higher)
+   - Consider: regulatory/compliance exposure, handling sensitive data (PII, HIPAA), reputational risk from AI errors, legal liability, operational disruption
+
 **Weighted Score Calculation**:
 - Business Value: 25%
-- LLM Capability Match: 20%
-- Tool Availability: 15%
+- Business Risk: 15%
+- LLM Capability Match: 10%
+- Tool Availability: 10%
 - User Acceptance: 15%
-- Time to Market: 15%
-- Strategic Alignment: 10%
+- Cost & Effort: 10%
+- Strategic Alignment: 15%
 
 ### Framework 2: Application Use Cases
 
@@ -60,38 +67,33 @@ Criteria for application use cases:
    - Cost savings
    - User satisfaction
 
-2. **Technical Feasibility** (0-10)
-   - Technology maturity
-   - Team expertise
+2. **Cost & Effort** (0-10, inverse)
+   - Technology maturity and team expertise
    - Infrastructure readiness
-
-3. **User Impact** (0-10)
-   - Number of users affected
-   - Frequency of use
-   - Critical to workflow?
-
-4. **Development Effort** (0-10, inverse)
-   - Complexity
-   - Team size needed
+   - Development complexity and team size needed
    - Timeline
+   - Cost to implement
 
-5. **Integration Complexity** (0-10, inverse)
+3. **Integration Complexity** (0-10, inverse)
    - Number of systems to integrate
    - API availability
    - Data migration needs
 
-6. **Strategic Alignment** (0-10)
+4. **Strategic Alignment** (0-10)
    - Company priorities
    - Market needs
    - Competitive positioning
 
+5. **Business Risk** (0-10)
+   - Measures new risks introduced by implementing this system (lower risk scores higher)
+   - Consider: regulatory/compliance exposure, handling sensitive data (PII, HIPAA), reputational risk from AI errors, legal liability, operational disruption
+
 **Weighted Score Calculation**:
 - Business Value: 25%
-- Technical Feasibility: 20%
-- User Impact: 20%
-- Development Effort: 15%
-- Integration Complexity: 10%
-- Strategic Alignment: 10%
+- Business Risk: 15%
+- Cost & Effort: 20%
+- Integration Complexity: 25%
+- Strategic Alignment: 15%
 
 ## Step 1: Apply Frameworks
 
@@ -183,7 +185,7 @@ Proceed with these 3 use cases?
 
 Create files:
 
-### File 1: `aiplc-docs/discovery/prioritization/framework.md`
+### File 1: `aiplc-docs/discovery/04-prioritization/01-framework.md`
 
 ```markdown
 # Prioritization Framework
@@ -200,7 +202,7 @@ Create files:
 [Document criteria and weights]
 ```
 
-### File 2: `aiplc-docs/discovery/prioritization/scoring.md`
+### File 2: `aiplc-docs/discovery/04-prioritization/02-scoring.md`
 
 ```markdown
 # Use Case Scoring Details
@@ -212,17 +214,27 @@ Create files:
 - LLM Capability Match: {score}/10 - {rationale}
 - Tool Availability: {score}/10 - {rationale}
 - User Acceptance: {score}/10 - {rationale}
-- Time to Market: {score}/10 - {rationale}
+- Cost & Effort: {score}/10 - {rationale}
 - Strategic Alignment: {score}/10 - {rationale}
+- Business Risk: {score}/10 - {rationale}
 - **Total Weighted Score**: {X.X}/10
 
 [Repeat for each use case]
 
 ## Application Use Cases
-[Same structure]
+
+### {Use Case Name}
+- Business Value: {score}/10 - {rationale}
+- Cost & Effort: {score}/10 - {rationale}
+- Integration Complexity: {score}/10 - {rationale}
+- Strategic Alignment: {score}/10 - {rationale}
+- Business Risk: {score}/10 - {rationale}
+- **Total Weighted Score**: {X.X}/10
+
+[Repeat for each use case]
 ```
 
-### File 3: `aiplc-docs/discovery/prioritization/ranking.md`
+### File 3: `aiplc-docs/discovery/04-prioritization/03-ranking.md`
 
 ```markdown
 # Final Use Case Rankings

@@ -31,11 +31,29 @@ Please provide the following information:
 1. Use Case Name:
 2. Brief Description (what problem does it solve?):
 3. Target Users/Personas:
-4. Business Value (High/Medium/Low):
-5. Technical Complexity (High/Medium/Low):
-6. Type (Agentic or Application):
-7. Key Capabilities Needed (list 2-3):
-8. Any Constraints or Dependencies:
+4. Type (Agentic or Application):
+5. Key Capabilities Needed (list 2-3):
+6. Any Constraints or Dependencies:
+
+**Business Value**:
+7. Business Value (High/Medium/Low):
+8. Strategic alignment — how does this initiative align with the company's strategic priorities? (High/Medium/Low):
+   - Consider: Does it support a stated company goal, executive mandate, or key business objective?
+
+**Effort**:
+9. Estimated cost to implement (High/Medium/Low):
+   - Consider both financial investment and time to deliver. A high-level estimation is fine.
+10. Implementation complexity (High/Medium/Low):
+   - Consider: number of dependencies, their availability, ease of integration, required expertise, infrastructure needs, and availability of tools required for agents to function.
+
+**Risk**:
+11. Business risk of implementing this application (High/Medium/Low/None):
+    - Examples of business risk:
+      - Providing incorrect medical, legal, or financial advice
+      - Handling PII, HIPAA, or other regulated data
+      - Regulatory/compliance exposure (GDPR, PCI-DSS, SOX)
+      - Reputational damage from biased or inaccurate AI outputs
+      - Legal liability from AI-generated recommendations
 
 You can provide all details at once or answer each question separately.
 ```
@@ -120,13 +138,18 @@ Create file: `aiplc-docs/discovery/use-case-intake/use-cases.md`
 #### 1. {Use Case Name}
 - **Description**: {description}
 - **Target Users**: {users}
-- **Business Value**: {High/Medium/Low}
-- **Technical Complexity**: {High/Medium/Low}
+- **Type**: {Agentic/Application}
 - **Key Capabilities**: 
   - {capability 1}
   - {capability 2}
   - {capability 3}
 - **Constraints**: {constraints if any}
+- **Business Value**: {High/Medium/Low}
+- **Strategic Alignment**: {High/Medium/Low}
+- **Estimated Cost**: {High/Medium/Low}
+- **Implementation Complexity**: {High/Medium/Low}
+- **Business Risk**: {High/Medium/Low/None}
+  - {Risk justification if Medium or High}
 
 [Repeat for each agentic use case]
 
