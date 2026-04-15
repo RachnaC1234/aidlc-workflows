@@ -33,12 +33,38 @@ Rule details location: `.kiro/aws-aiplc-rule-details/`
 - Test content parsing compatibility
 
 ## MANDATORY: Question File Format
-**CRITICAL**: When asking questions at any phase, you MUST follow question format guidelines.
+**CRITICAL**: ALL questions — at every phase, every intake, every stage — MUST be written in a question file (.md), NEVER asked directly in chat. No exceptions.
 
-**See `common/question-format-guide.md` for complete question formatting rules including**:
-- Multiple choice format (A, B, C, D, E options)
-- [Answer]: tag usage
-- Answer validation and ambiguity resolution
+**See `common/question-format-guide.md` for complete formatting rules.**
+
+**Core rules**:
+- Every question goes in a dedicated `.md` file in the appropriate `aiplc-docs/` subdirectory
+- Use multiple choice format (A, B, C, ... options) with "Other" always as the last option
+- Every question ends with an `[Answer]:` tag for the user to fill in
+- NEVER ask questions in the chat interface
+
+**Contextual guidance for every question**:
+- Each question MUST include a brief explanation of WHY it is being asked and HOW the answer will be used
+- When options are provided, include a short description of what each option means so the user can make an informed choice
+- If a question requires domain knowledge, provide examples or reference points to help the user answer
+- If a question has a recommended default, state it clearly (e.g., "Recommended: B")
+
+**Example of a well-formed question**:
+```markdown
+## Question 8
+How well does this initiative align with the company's strategic priorities?
+
+_This helps us score strategic alignment during prioritization. Initiatives that directly support executive mandates or stated company goals will rank higher._
+
+A) High — directly supports a stated company goal, executive mandate, or key business objective
+B) Medium — partially aligned with company direction but not a top priority
+C) Low — tangentially related or not clearly connected to current strategic priorities
+D) Other (please describe after [Answer]: tag below)
+
+[Answer]:
+```
+
+**If the user reports that questions are being asked in chat**, immediately switch to file-based questions and apologize for the deviation.
 
 ## MANDATORY: Custom Welcome Message
 **CRITICAL**: When starting ANY Discovery workflow, you MUST display the welcome message.
@@ -69,7 +95,7 @@ The Discovery Phase has **THREE ENTRY POINTS**:
 2. Load all steps from `inception/workspace-detection.md`
 3. Execute workspace detection:
    - **PRIORITY CHECK**: Check for existing PROTOTYPE-*.md files (Entry Point 1)
-     - Path: `aiplc-docs/discovery/prototypes/*/PROTOTYPE-*.md`
+     - Path: `aiplc-docs/discovery/05-prototypes/*/PROTOTYPE-*.md`
      - If found: Skip all discovery, jump to Prototype Building
    - Check for existing aiplc-state.md (resume if found)
    - Check for existing Discovery artifacts
@@ -165,7 +191,7 @@ Load `discovery/use-case-intake.md`
 2. Ask: "How many use cases?" (could be 3, 5, 10, N)
 3. Gather details for all N use cases
 4. Categorize: Agentic vs Application
-5. Document in `aiplc-docs/discovery/use-case-intake/use-cases.md`
+5. Document in `aiplc-docs/discovery/03-use-case-intake/01-use-cases.md`
 
 ### Step 2: Use Case Prioritization
 
@@ -191,7 +217,7 @@ Load `discovery/prototype-context-generation.md`
    - Define requirements (LLM, tools, features)
    - Specify frontend (device, screens)
    - Generate PROTOTYPE-{use-case-slug}.md file
-2. Create 3 PROTOTYPE-*.md files in `aiplc-docs/discovery/prototypes/`
+2. Create 3 PROTOTYPE-*.md files in `aiplc-docs/discovery/05-prototypes/`
 
 ### Step 4: Decision Point
 
@@ -306,36 +332,53 @@ This Discovery Document will be provided to developers in a separate workspace f
 - Log every interaction with timestamp
 - Use ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)
 
+## MANDATORY: Sequential Naming Convention
+
+**CRITICAL**: ALL folders and files created during the workflow MUST use a two-digit sequential prefix that reflects the order in which they are created.
+
+**Rules**:
+- Folders: `NN-folder-name/` (e.g., `01-envision/`, `02-solution-analysis/`)
+- Files: `NN-file-name.md` (e.g., `01-pain-points.md`, `02-prfaq.md`)
+- Numbering starts at `01` within each directory level
+- When a new file or folder is created, assign the next available number in that directory
+- Never reuse or skip numbers
+- The prefix makes it easy to see the order in which artifacts were produced
+
+**Exceptions**:
+- `aiplc-state.md` and `audit.md` do not get prefixes (they are persistent tracking files)
+- `PROTOTYPE-*.md` files keep their existing naming convention (they are portable handoff files)
+- `discovery-document.md` does not get a prefix (it is the final consolidated output)
+
 ## Directory Structure
 
 ```
 aiplc-docs/
 ├── discovery/
-│   ├── discovery-document.md          # Main output
-│   ├── envision/                      # Path A
-│   │   ├── pain-points.md
-│   │   └── prfaq.md
-│   ├── solution-analysis/             # Path A (if multiple)
-│   │   └── identified-solutions.md
-│   ├── use-case-intake/               # Path B or Path A.2
-│   │   └── use-cases.md
-│   ├── prioritization/                # Path B or Path A.2
-│   │   ├── framework.md
-│   │   ├── scoring.md
-│   │   └── ranking.md
-│   ├── prototypes/                    # All paths
+│   ├── discovery-document.md          # Main output (no prefix)
+│   ├── 01-envision/                   # Path A
+│   │   ├── 01-pain-points.md
+│   │   └── 02-prfaq.md
+│   ├── 02-solution-analysis/          # Path A (if multiple)
+│   │   └── 01-identified-solutions.md
+│   ├── 03-use-case-intake/            # Path B or Path A.2
+│   │   └── 01-use-cases.md
+│   ├── 04-prioritization/             # Path B or Path A.2
+│   │   ├── 01-framework.md
+│   │   ├── 02-scoring.md
+│   │   └── 03-ranking.md
+│   ├── 05-prototypes/                 # All paths
 │   │   ├── {use-case-1-slug}/
 │   │   │   ├── PROTOTYPE-{use-case-1-slug}.md  ★ Shareable
-│   │   │   ├── design-context.md
-│   │   │   └── iteration-log.md
+│   │   │   ├── 01-design-context.md
+│   │   │   └── 02-iteration-log.md
 │   │   ├── {use-case-2-slug}/
 │   │   │   └── PROTOTYPE-{use-case-2-slug}.md  ★ Shareable
 │   │   └── {use-case-3-slug}/
 │   │       └── PROTOTYPE-{use-case-3-slug}.md  ★ Shareable
-│   ├── product-strategy/
-│   │   └── strategy.md
-│   └── go-to-market/
-│       └── gtm-plan.md
+│   ├── 06-product-strategy/
+│   │   └── 01-strategy.md
+│   └── 07-go-to-market/
+│       └── 01-gtm-plan.md
 ├── aiplc-state.md
 └── audit.md
 ```
