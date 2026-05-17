@@ -1,317 +1,185 @@
-# AI-PLC Discovery Workspace
+# AI-PLC: AI-Assisted Product Lifecycle — Discovery Workspace
 
-A Product Manager-focused workspace for defining and validating AI product ideas using the AI Product Lifecycle (AI-PLC) Discovery Phase.
+## What is PDLC?
 
-## What is This?
+PDLC (Product Development Life Cycle) is the step that comes before building software. It uses AI-assisted technology to complete a Discovery phase — helping you figure out what to build before writing any code.
 
-This workspace helps Product Managers complete the Discovery phase of AI-PLC - the critical first step where you define **WHO** your customer is, **WHAT** problem you're solving, and **WHY** it matters, before any technical development begins.
-
-## Who Should Use This?
-
-- **Product Managers** leading AI product initiatives
-- **Product Teams** evaluating multiple use cases
-- **Workshop Facilitators** running AI product discovery sessions
-- **Innovation Teams** exploring AI opportunities
-
-## What You'll Get
-
-### Main Output
-A comprehensive **Discovery Document** containing:
-- Customer pain points and insights
-- PR/FAQ using Amazon's Working Backwards method
-- Use case analysis and prioritization
-- PROTOTYPE-*.md specifications (portable, shareable)
-- Product strategy and positioning
-- Go-to-market plan
-
-### Ready for Handoff
-Everything developers need to start building in their own workspace:
-- Clear product vision and requirements
-- Validated use cases
-- Prototype specifications
-- Strategic context
-
-## Three Ways to Start
-
-### Entry Point 1: Existing Prototype Specs
-**You have**: PROTOTYPE-*.md files from a workshop or previous session  
-**What happens**: Build prototypes immediately, skip discovery phases  
-**Best for**: Workshop teams with pre-generated specifications
-
-**Example Prompts:**
-- "I want to build prototypes from existing PROTOTYPE files"
-- "Start the AI-PLC workflow to build my prototypes"
-- "I have PROTOTYPE-*.md files ready, let's build them"
-
-### Entry Point 2: Customer Pain Points
-**You have**: Customer feedback, reviews, or pain points  
-**What happens**: Create PR/FAQ → Analyze solutions → Build prototypes  
-**Best for**: Starting from customer insights
-
-**Example Prompts:**
-- "I want to start AI-PLC Discovery from customer pain points"
-- "Help me create a PR/FAQ from customer feedback"
-- "I have customer reviews and want to identify AI solutions"
-- "Start Discovery workflow from pain points"
-
-### Entry Point 3: Multiple Use Cases
-**You have**: 3, 5, 10, or 20+ use case ideas to evaluate  
-**What happens**: Prioritize → Select top 3 → Generate specs → Build prototypes  
-**Best for**: Teams with many ideas needing prioritization
-
-**Example Prompts:**
-- "I have 10 use cases that need prioritization using AI-PLC"
-- "Start AI-PLC Discovery workflow for use case prioritization"
-- "Help me prioritize multiple AI agent ideas"
-- "I want to evaluate and rank my use cases"
-
-## Workflow Overview
+Think of it this way:
 
 ```
-Product Manager Request
-         ↓
-Workspace Detection
-         ↓
-Check for PROTOTYPE-*.md files?
-         ↓
-    ┌────┴────┐
-    ↓         ↓
-Entry Point 1  Entry Points 2 & 3
-Existing Files Pain Points or Use Cases
-    ↓              ↓
-    └──────┬───────┘
-           ↓
-   Prototype Building (Optional)
-           ↓
-   Product Strategy
-           ↓
-   Go-to-Market
-           ↓
-   Discovery Document Complete
+PDLC (Product Discovery)  →  DLC (Development)
+Figure out WHAT               Build it
 ```
 
-## Quick Start
+The Discovery phase supports three scenarios:
 
-### Prerequisites
+| Scenario | You start with... | You get... |
+|---|---|---|
+| A. Customer pain points | Customer feedback, reviews, or complaints | A PR/FAQ and prototype specs |
+| B. Use case prioritization | A list of AI ideas (3, 5, 10, or more) | A ranked list and prototype specs for the top ideas |
+| C. Build prototypes | Prototype spec files from scenario A or B | Working prototype code |
 
-**Required Software:**
-
-#### 1. Kiro IDE Installation
-- Download and install from [https://kiro.dev/docs/getting-started/installation/#download-kiro](https://kiro.dev/docs/getting-started/installation/#download-kiro)
-- Follow the installation guide for your operating system (Windows, macOS, or Linux)
-
-#### 2. Git Installation
-Git is required to download the AI-PLC workspace from GitHub.
-
-**Step 1: Check if Git is already installed**
-1. Open Terminal (macOS/Linux) or Command Prompt (Windows)
-2. Type: `git --version` and press Enter
-3. If you see a version number (like "git version 2.39.0"), Git is already installed - skip to step 3!
-
-**Step 2: Install Git (if not already installed)**
-
-**For Windows:**
-1. Open Command Prompt as Administrator (right-click → "Run as administrator")
-2. Type: `winget install Git.Git` and press Enter
-3. Wait for installation to complete
-4. Close and reopen Command Prompt
-5. Verify: `git --version`
-
-**For macOS:**
-1. Open Terminal
-2. Type: `git --version` and press Enter
-3. If Git is not installed, macOS will automatically prompt you to install it
-4. Click "Install" and follow the prompts
-5. Verify: `git --version`
-
-**For Linux (Ubuntu/Debian):**
-1. Open Terminal
-2. Type: `sudo apt update && sudo apt install git` and press Enter
-3. Enter your password when prompted
-4. Verify: `git --version`
-
-**Step 3: Verify Git is working**
-Type this command to test Git is properly installed:
-```bash
-git --help
-```
-You should see Git help information displayed.
-
-**System Requirements:**
-- **Admin/Installation Permissions**: You need permissions to install packages (Python, Node.js, etc.) that will be automatically installed during the prototype building process in Kiro
-- **Internet Connection**: Required for package downloads and API access
-
-**For AI Agent Applications:**
-- **LLM API Keys**: Required for accessing Large Language Models (e.g., AWS Bedrock, OpenAI, Anthropic)
-- **Strands SDK**: Used for building AI agents - will be automatically installed during prototype building
-
-**Knowledge Requirements:**
-- Basic understanding of your product domain
-- Customer insights or use case ideas (optional)
-
-### Getting Started
-
-1. **Clone the AI-PLC branch** (not main branch)
-   ```bash
-   git clone -b ai-plc-prioritize-prototype-agents https://github.com/RachnaC1234/aidlc-workflows.git
-   cd aidlc-workflows
-   ```
-   
-   **Note**: The `git clone` command creates a new folder called `aidlc-workflows` containing all the workspace files.
-
-2. **Open in Kiro IDE**
-   ```bash
-   kiro .
-   ```
-   Or open Kiro IDE and use File → Open Workspace to select the cloned folder.
-
-3. **Enable Vibe Mode**
-   - Once Kiro IDE opens, activate **Vibe Mode** for the AI-PLC workflow
-   - This enables the AI assistant to guide you through the discovery process
-
-4. **Start the workflow**
-   - The AI will automatically detect your workspace
-   - Check for existing PROTOTYPE-*.md files
-   - Guide you through the appropriate entry point
-   
-   **Choose ONE prompt based on what you have:**
-   
-   **Entry Point 1 - If you have PROTOTYPE-*.md files (pick one):**
-   - `"I want to build prototypes from existing PROTOTYPE files"`
-   - `"Start the AI-PLC workflow to build my prototypes"`
-   - `"I have PROTOTYPE-*.md files ready, let's build them"`
-   
-   **Entry Point 2 - If you have customer pain points (pick one):**
-   - `"I want to start AI-PLC Discovery from customer pain points"`
-   - `"Help me create a PR/FAQ from customer feedback"`
-   - `"I have customer reviews and want to identify AI solutions"`
-   - `"Start Discovery workflow from pain points"`
-   
-   **Entry Point 3 - If you have multiple use cases to prioritize (pick one):**
-   - `"I have 10 use cases that need prioritization using AI-PLC"`
-   - `"Start AI-PLC Discovery workflow for use case prioritization"`
-   - `"Help me prioritize multiple AI agent ideas"`
-   - `"I want to evaluate and rank my use cases"`
-
-5. **Follow the guided process**
-   - Answer questions using [Answer]: format
-   - Review and approve each stage
-   - Make product decisions on strategy and positioning
-   
-   **Important**: Sometimes Kiro may start asking questions directly in the chat interface instead of creating question files for you to fill out. If this happens, remind Kiro by saying:
-   
-   ```
-   "Please create a question file (.md) with [Answer]: tags instead of asking in chat, so my answers can be logged and audited later"
-   ```
-   
-   This ensures all your responses are properly documented in the audit trail for future reference.
-
-**Note**: Additional software packages (Python libraries, Node.js packages) may be installed automatically during the prototype building process.
-
-## Workflow Overview
-
-```
-Product Manager Request
-         ↓
-Workspace Detection
-         ↓
-Check for PROTOTYPE-*.md files?
-         ↓
-    ┌────┴────┐
-    ↓         ↓
-Entry Point 1  Entry Points 2 & 3
-Existing Files Pain Points or Use Cases
-    ↓              ↓
-    └──────┬───────┘
-           ↓
-   Prototype Building (Optional)
-           ↓
-   Product Strategy
-           ↓
-   Go-to-Market
-           ↓
-   Discovery Document Complete
-```
-
-## Key Features
-
-- **PM-Focused**: No coding required - focuses on product vision
-- **Three Entry Points**: Flexible starting points based on your situation
-- **Scalable**: Supports any number of use cases (3, 5, 10, 20+)
-- **Workshop-Friendly**: PROTOTYPE-*.md files are portable and shareable
-- **Transparent**: Always shows defaults, asks for your input
-- **Documented**: Complete audit trail of all decisions
-- **Handoff-Ready**: Produces comprehensive Discovery Document for developers
-
-## What Happens After Discovery?
-
-Developers receive your Discovery Document in a **separate workspace** where they:
-1. **Inception Phase**: Requirements analysis, workflow planning, application design
-2. **Construction Phase**: Code generation, build, and test
-3. **Operations Phase**: Deployment and monitoring
-
-## Example Use Cases
-
-### Workshop Scenario
-- Facilitator generates 5 PROTOTYPE-*.md files
-- Distributes to 5 teams
-- Each team opens workspace, builds their prototype
-- Teams present and compare results
-
-### Startup Scenario
-- PM has 10 potential AI agent ideas
-- Uses Entry Point 3 to prioritize
-- Selects top 3 for prototyping
-- Generates PROTOTYPE-*.md files
-- Hands off to engineering team
-
-### Customer-Driven Scenario
-- PM collects customer reviews from Trustpilot
-- Uses Entry Point 2 with URL
-- Creates PR/FAQ
-- Builds and validates prototype
-- Defines strategy and GTM
-
-## Directory Structure
-
-```
-ai-plc-discovery-workspace/
-├── README.md                          # This file
-├── .kiro/
-│   ├── aws-aiplc-rule-details/       # Workflow rules
-│   │   ├── common/                   # Common guidelines
-│   │   ├── discovery/                # Discovery phase rules
-│   │   └── inception/                # Workspace detection only
-│   └── steering/
-│       └── aws-aiplc-rules/          # Core workflow
-└── aiplc-docs/                       # Generated during workflow
-    ├── discovery/
-    │   ├── discovery-document.md     # Main output ★
-    │   ├── envision/                 # Pain points & PR/FAQ
-    │   ├── use-case-intake/          # Use case details
-    │   ├── prioritization/           # Scoring & ranking
-    │   ├── prototypes/               # PROTOTYPE-*.md files ★
-    │   ├── product-strategy/         # Strategy docs
-    │   └── go-to-market/             # GTM plans
-    ├── aiplc-state.md               # Session state
-    └── audit.md                      # Complete audit trail
-```
-
-## Support
-
-For questions, issues, or contributions:
-- Open an issue in this repository
-- Refer to the documentation in `.kiro/aws-aiplc-rule-details/`
-- Check the welcome message for detailed workflow guidance
-
-## License
-
-[Add your license here]
-
-## Contributing
-
-[Add contribution guidelines here]
+In all three cases, the final output is a set of prototype specifications (PROTOTYPE-*.md files) and optionally working prototypes — that will explore the art of the possible.
 
 ---
 
-**Ready to start?** Open this workspace in Kiro IDE and let the AI guide you through your Discovery journey!
+## Getting Started — Step by Step
+
+Follow these steps in order. You will need about 15 minutes.
+
+### Step 1: Install Kiro IDE
+
+Kiro is the AI-powered IDE that runs the Discovery workflow.
+
+1. Go to [kiro.dev](https://kiro.dev/) and download the installer for your operating system
+2. Run the installer and follow the prompts
+3. Sign in with a personal identity provider (Gmail, GitHub, etc.)
+4. When prompted to select a folder, create a new empty folder — this will be your workspace (you can change it later)
+
+### Step 2: Install Git
+
+Git is needed to download the workflow files.
+
+First, check if Git is already installed. Open a terminal and run:
+
+```
+git --version
+```
+
+If you see a version number, skip to Step 3.
+
+If not, install Git:
+
+**Windows:**
+1. Open Command Prompt or PowerShell
+2. Run: `winget install Git.Git`
+3. Close and reopen the terminal
+4. Verify: `git --version`
+
+**macOS:**
+1. Open Terminal and run: `git --version`
+2. macOS will prompt you to install it — click Install
+3. Verify: `git --version`
+
+### Step 3: Clone the Workflow Repository
+
+1. Open a terminal and navigate to the folder where you want to work
+2. Run:
+   ```
+   git clone -b ai-plc-prioritize-prototype-agents https://github.com/mauriciofm/aidlc-workflows.git
+   ```
+3. Enter the new folder:
+   ```
+   cd aidlc-workflows
+   ```
+
+### Step 4: Open the Project in Kiro
+
+1. In Kiro, go to **File → Open Folder**
+2. Select the `aidlc-workflows` folder you just cloned
+
+### Step 5: Verify You Are Signed In
+
+1. Click the user icon in the lower-left corner of the Kiro window
+2. Confirm your account is active
+
+### Step 6: Open the Chat Interface
+
+1. Click the chat icon (the speech bubble in the sidebar)
+2. Kiro will ask you to choose between **Vibe** and **Spec** mode — always select **Vibe**
+3. Test it by asking Kiro any question — for example: `Hello, what can you do?`
+
+> **Important**: Always choose **Vibe** mode, not Spec. The AI-PLC workflow is designed to run in Vibe mode.
+
+### Step 7: Start the Discovery Workflow
+
+Send a prompt to Kiro based on your scenario. Always mention "AI-PLC" so Kiro activates the correct workflow.
+
+**Scenario A — Starting from customer pain points:**
+```
+I want to start AI-PLC Discovery from customer pain points
+```
+
+**Scenario B — Prioritizing a list of use cases:**
+```
+I have 10 use cases that need prioritization using AI-PLC
+```
+
+**Scenario C — Building from existing prototype specs:**
+```
+I want to build prototypes from existing PROTOTYPE files using AI-PLC
+```
+
+From here, Kiro will guide you through each stage. Answer the questions it presents, review each stage, and approve before moving forward.
+
+> **Tip**: If Kiro starts asking questions directly in chat instead of creating a file, say:
+> `Please create a question file (.md) with [Answer]: tags instead of asking in chat`
+
+---
+
+## What Happens After Discovery?
+
+The Discovery phase produces prototype specification files (PROTOTYPE-*.md). You can use these files right away in Scenario C to build a working prototype — great for demos, validation, and getting early feedback.
+
+However, prototypes are not production-ready. To prepare for a production environment, we recommend following the DLC (Development Lifecycle) process, where Product Managers and developers collaborate to:
+
+1. Analyze requirements and plan the architecture
+2. Generate production-quality code
+3. Build, test, and deploy
+
+---
+
+## Appendix
+
+### System Requirements
+
+- Internet connection (required for downloads and API access)
+- Permissions to install software on your machine
+- For AI agent prototypes: LLM API keys (e.g., AWS Bedrock, OpenAI, Anthropic)
+
+### Workflow Diagram
+
+```
+Your Request
+      ↓
+Workspace Detection
+      ↓
+  ┌───┴───┐
+  ↓       ↓
+Scenario  Scenarios
+   C       A & B
+  ↓       ↓
+  └───┬───┘
+      ↓
+Prototype Building
+      ↓
+Product Strategy
+      ↓
+Go-to-Market
+      ↓
+Discovery Document Complete
+```
+
+### Directory Structure
+
+```
+aidlc-workflows/
+├── README.md                          # This file
+├── .kiro/
+│   ├── aws-aiplc-rule-details/       # Workflow rules
+│   └── steering/                     # Core workflow steering files
+└── aiplc-docs/                       # Generated during the workflow
+    ├── discovery/
+    │   ├── discovery-document.md     # Final output
+    │   ├── prototypes/               # PROTOTYPE-*.md files
+    │   ├── prioritization/           # Scoring and ranking
+    │   ├── product-strategy/         # Strategy docs
+    │   └── go-to-market/             # GTM plans
+    ├── aiplc-state.md               # Session progress
+    └── audit.md                      # Audit trail
+```
+
+### Additional Resources
+
+- [Kiro IDE documentation](https://kiro.dev/docs/)
+- [Git installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
